@@ -22,9 +22,9 @@ const QuranPostGenerator = () => {
   const dimensionOptions = ['post', 'story'];
   const yesNoOptions = ['Yes', 'No'];
 
-  const dimensionSizes = {
-    post: 'w-[470px] h-[470px]',
-    story: 'w-[315px] h-[560px]',
+const dimensionSizes = {
+    post: 'w-full max-w-[470px] h-[470px]',
+    story: 'w-full max-w-[315px] h-[560px]',
   };
 
   const generateRandomGradient = () => {
