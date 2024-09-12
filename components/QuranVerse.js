@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import domtoimage from 'dom-to-image'
 import html2canvas from 'html2canvas';
 
 const QuranPostGenerator = () => {
@@ -67,24 +68,31 @@ const QuranPostGenerator = () => {
     }
     setGradient(generateRandomGradient());
     setLoading(false);
-  };
-
-  const downloadImage = async () => {
+  };const downloadImage = async () => {
     if (postRef.current) {
-      const scale = 2;
-      const canvas = await html2canvas(postRef.current, {
+      const scale = 2; // Adjust scale if necessary
+  
+      // Apply a fallback font to ensure text rendering
+      const container = postRef.current;
+      container.style.fontFamily = "'Amiri', serif"; // Ensure the font is applied
+  
+      html2canvas(container, {
         scale: scale,
         useCORS: true,
-        backgroundColor: null,
-      });
-      const image = canvas.toDataURL('image/png');
-      const link = document.createElement('a');
-      link.href = image;
-      link.download = `quran-verse-${chapter}-${verse}.png`;
-      link.click();
+        backgroundColor: null, // Ensure transparent background
+      })
+        .then((canvas) => {
+          const image = canvas.toDataURL('image/png');
+          const link = document.createElement('a');
+          link.href = image;
+          link.download = `quran-verse-${chapter}-${verse}.png`;
+          link.click();
+        })
+        .catch((error) => {
+          console.error('Error generating image:', error);
+        });
     }
   };
-
   const GraphicBackground = () => (
     <svg className="fixed inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -191,23 +199,3 @@ const QuranPostGenerator = () => {
 };
 
 export default QuranPostGenerator;
-
-
-
-
-// const fetchVerse = async () => {
-//     setLoading(true);
-//     try {
-//       const response = await axios.get(`https://api.quran.com/api/v4/verses/by_key/${chapter}:${verse}?translations=131`, {
-//         headers: { 'Accept': 'application/json' }
-//       });
-//       console.log(response)
-//       setVerseText(response.data.verse.translations[0].text);
-//     } catch (error) {
-//       console.error('Error fetching verse:', error);
-//       setVerseText('Error fetching verse. Please try again.');
-//     }
-//     setLoading(false);
-//     console.log(verseText)
-    
-//   };
