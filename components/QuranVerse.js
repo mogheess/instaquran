@@ -20,7 +20,7 @@ const QuranPostGenerator = () => {
 
   const dimensionOptions = ['post', 'story'];
   const yesNoOptions = ['Yes', 'No'];
-  
+
   const dimensionSizes = {
     post: 'w-full max-w-[470px] h-[470px]',
     story: 'w-full max-w-[315px] h-[560px]',
@@ -95,7 +95,7 @@ const QuranPostGenerator = () => {
       <div className="container mx-auto px-4 py-8 relative z-10 flex flex-col items-center">
         <div className="w-full max-w-lg bg-white rounded-lg shadow-lg p-6 mb-8">
           <h1 className="mt-10 text-5xl font-bold mb-3 text-center text-pink-600">Insta Quran</h1>
-          <h1 className="text-lg font-bold mb-6 text-center text-pink-500">Generate Qur'anic Verses for Instagram</h1>
+          <h1 className="text-lg font-bold mb-6 text-center text-pink-500">Generate Qur&apos;anic Verses for Instagram</h1>
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-800 mb-1">Chapter (1-114)</label>
@@ -163,7 +163,7 @@ const QuranPostGenerator = () => {
                   </p>
                 )}
                 <p className={`text-gray-800 text-center ${showArabic ? 'text-sm' : 'text-xl'} leading-relaxed`} style={{ direction: 'ltr', unicodeBidi: 'isolate' }}>
-                  "{englishTranslation}"
+                  &quot;{englishTranslation}&quot;
                 </p>
                 <div className="text-gray-700 text-sm mb-2">
                   {chapter}:{verse}
