@@ -82,7 +82,19 @@ const QuranPostGenerator = () => {
   }, [verseText, showArabic, dimension, gradient, backgroundType, selectedImage]);
 
 
-  const getTextStyle = () => {
+  const getArabicTextStyle = () => {
+    let style = 'font-amiri'; 
+    if (backgroundType === 'gradient') {
+      style += ' text-gray-800';
+    } else if (imageTheme === 'dark') {
+      style += ' text-yellow-300';
+    } else {
+      style += ' text-gray-800 font-semibold';
+    }
+    return style;
+  };
+
+  const getEnglishTextStyle = () => {
     if (backgroundType === 'gradient') {
       return 'text-gray-800';
     } else if (imageTheme === 'dark') {
@@ -91,6 +103,7 @@ const QuranPostGenerator = () => {
       return 'text-gray-800 font-semibold';
     }
   };
+
 
   const fetchVerse = async () => {
     if (chapter < 1 || chapter > 114 || verse < 1 || verse > 286) {
@@ -319,16 +332,16 @@ const QuranPostGenerator = () => {
                 }}
               >
                 {showArabic && (
-                   <p className={`${getTextStyle()} text-center font-arabic text-lg leading-relaxed mb-4 whitespace-pre-wrap`} dir="rtl">
+                   <p className={`${getArabicTextStyle()} text-center font-arabic text-lg leading-relaxed mb-4 whitespace-pre-wrap`} dir="rtl">
                    {verseText}
                  </p>
                 )}
-                 <p className={`${getTextStyle()} text-center ${showArabic ? 'text-sm' : 'text-xl'} leading-relaxed`} style={{ direction: 'ltr', unicodeBidi: 'isolate' }}>
+                 <p className={`${getEnglishTextStyle()} text-center ${showArabic ? 'text-sm' : 'text-xl'} leading-relaxed`} style={{ direction: 'ltr', unicodeBidi: 'isolate' }}>
                   &quot;{englishTranslation}&quot;
                 </p>
                
                 <br/>
-                <div className={`${getTextStyle()} text-sm mb-2`}>
+                <div className={`${getArabicTextStyle()} text-sm mb-2`}>
                   {chapter}:{verse}
                 </div>
               </div>
