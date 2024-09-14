@@ -1,6 +1,7 @@
 # InstaQuran
 
 InstaQuran is a web application that allows users to generate beautiful, shareable images of Quranic verses. Perfect for social media posts, this tool combines the timeless wisdom of the Quran with modern design aesthetics.
+Visit: https://instaquran.netlify.app
 
 ## Features
 
