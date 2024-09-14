@@ -7,7 +7,7 @@ InstaQuran is a web application that allows users to generate beautiful, shareab
 - **Verse Selection**: Choose any verse from the Quran by specifying chapter and verse numbers.
 - **Customizable Design**: Select from various background options including gradients and images.
 - **Bilingual Display**: Show verses in both Arabic and English translations.
-- **Easy Sharing**: Download images or share directly to social media platforms.
+- **Easy Sharing**: Download images or copy to share directly to social media platforms.
 - **Responsive Design**: Works seamlessly on desktop and mobile devices.
 
 ## Tech Stack
@@ -77,7 +77,6 @@ This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the [LICENSE
 ## Acknowledgments
 
 - Quran API provided by [quran.com](https://quran.com/api)
-- Arabic font: Amiri from Google Fonts
 
 ## Contact
 
