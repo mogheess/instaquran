@@ -269,7 +269,7 @@ const QuranPostGenerator = () => {
                 className={`${chapterError && "border-2 border-red-600"} duration-0 text-gray-800`}
               />
               <div
-                className={`${chapterError || "invisible"} min-h-6 text-sm font-medium text-red-600 -mb-3 mt-1 p-0.5`}
+                className={`${chapterError || "invisible"} min-h-5 text-xs font-medium text-red-600 -mb-5 ml-1`}
               >
                 {chapterError}
               </div>
@@ -285,7 +285,7 @@ const QuranPostGenerator = () => {
                 className={`${verseError && "border-2 border-red-600"} duration-0 text-gray-800`}
               />
               <div
-                className={`${verseError || "invisible"} min-h-6 text-sm font-medium text-red-600 -mb-3 mt-1 p-0.5`}
+                className={`${verseError || "invisible"} min-h-5 text-xs font-medium text-red-600 -mb-5 ml-1`}
               >
                 {verseError}
               </div>
