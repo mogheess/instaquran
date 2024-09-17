@@ -410,7 +410,11 @@ const QuranPostGenerator = () => {
                 ))}
               </div>
             </div>
-            <Button onClick={fetchVerse} disabled={loading} className="w-full">
+            <Button
+              onClick={fetchVerse}
+              disabled={chapterError || verseError || !verse || !chapter}
+              className="w-full"
+            >
               {loading ? "Loading..." : "Generate Post"}
             </Button>
           </div>
