@@ -117,10 +117,6 @@ const QuranPostGenerator = () => {
   };
 
   const fetchVerse = async () => {
-    if (chapter < 1 || chapter > 114 || verse < 1 || verse > 286) {
-      alert("Please enter valid chapter (1-114) and verse (1-286) numbers.");
-      return;
-    }
     setLoading(true);
     try {
       const response = await axios.get(

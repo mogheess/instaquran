@@ -1,5 +1,6 @@
 import Image from "next/image";
 import QuranVerse from "../components/QuranVerse";
+import SocialFollow from "../components/SocialFollow";
 
 export default function Home() {
   return (
@@ -10,12 +11,8 @@ export default function Home() {
 
       <QuranVerse />
 
-      <p className="text-center text-gray-800 pb-4">
-        Created by{" "}
-        <a href="https://x.com/mogheess_" target="_blank">
-          {" "}
-          <span className="text-pink-600 font-semibold">Zuno</span>{" "}
-        </a>
+      <p className="text-center text-gray-800 pb-4 space-x-2">
+        <SocialFollow />
         <br />
         Send Salawat to the Prophet (صلى الله عليه وسلم)
         <br />
