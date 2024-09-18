@@ -329,13 +329,13 @@ const QuranPostGenerator = () => {
               <div className="flex space-x-2">
                 <Button
                   onClick={() => setBackgroundType("gradient")}
-                  className={`flex-1 ${backgroundType === "gradient" ? "bg-pink-600 text-white" : "bg-gray-200 text-gray-700"}`}
+                  className={`flex-1 ${backgroundType === "gradient" ? "bg-pink-600 text-white" : "bg-gray-200 text-gray-700"} hover:text-white`}
                 >
                   Gradient
                 </Button>
                 <Button
                   onClick={() => setBackgroundType("image")}
-                  className={`flex-1 ${backgroundType === "image" ? "bg-pink-600 text-white" : "bg-gray-200 text-gray-700"}`}
+                  className={`flex-1 ${backgroundType === "image" ? "bg-pink-600 text-white" : "bg-gray-200 text-gray-700"} hover:text-white`}
                 >
                   Image
                 </Button>
@@ -375,13 +375,13 @@ const QuranPostGenerator = () => {
                   <div className="flex space-x-2">
                     <Button
                       onClick={() => setImageTheme("dark")}
-                      className={`flex-1 ${imageTheme === "dark" ? "bg-pink-600 text-white" : "bg-gray-200 text-gray-700"}`}
+                      className={`flex-1 ${imageTheme === "dark" ? "bg-pink-600 text-white" : "bg-gray-200 text-gray-700"} hover:text-white`}
                     >
                       Dark
                     </Button>
                     <Button
                       onClick={() => setImageTheme("light")}
-                      className={`flex-1 ${imageTheme === "light" ? "bg-pink-600 text-white" : "bg-gray-200 text-gray-700"}`}
+                      className={`flex-1 ${imageTheme === "light" ? "bg-pink-600 text-white" : "bg-gray-200 text-gray-700"} hover:text-white`}
                     >
                       Light
                     </Button>
@@ -418,7 +418,7 @@ const QuranPostGenerator = () => {
                   <Button
                     key={option}
                     onClick={() => setDimension(option)}
-                    className={`flex-1 ${dimension === option ? "bg-pink-600 text-white" : "bg-gray-200 text-gray-700"}`}
+                    className={`flex-1 ${dimension === option ? "bg-pink-600 text-white" : "bg-gray-200 text-gray-700"} hover:text-white`}
                   >
                     {option}
                   </Button>
@@ -434,7 +434,7 @@ const QuranPostGenerator = () => {
                   <Button
                     key={option}
                     onClick={() => setShowArabic(option === "Yes")}
-                    className={`flex-1 ${showArabic === (option === "Yes") ? "bg-pink-600 text-white" : "bg-gray-200 text-gray-700"}`}
+                    className={`flex-1 ${showArabic === (option === "Yes") ? "bg-pink-600 text-white" : "bg-gray-200 text-gray-700"} hover:text-white`}
                   >
                     {option}
                   </Button>
