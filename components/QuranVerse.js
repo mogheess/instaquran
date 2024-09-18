@@ -247,6 +247,21 @@ const QuranPostGenerator = () => {
     return true;
   }
 
+  const setRandomChapterAndVerse = () => {
+    const randChapter = Math.floor(Math.random() * 114) || 1;
+    const randVerse =
+      Math.floor(Math.random() * chapterToVerseCount[randChapter]) || 1;
+    setChapter(randChapter);
+    setVerse(randVerse);
+    validateInput(randChapter, randVerse);
+  };
+
+  const setRandomVerse = () => {
+    const randVerse =
+      Math.floor(Math.random() * chapterToVerseCount[chapter]) || 1;
+    setVerse(randVerse);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 relative flex flex-col items-center">
       <div className="container mx-auto px-4 py-8 relative z-10 flex flex-col items-center">
@@ -262,12 +277,20 @@ const QuranPostGenerator = () => {
               <label className="block text-sm font-medium text-gray-800 mb-1">
                 Chapter
               </label>
-              <Input
-                type="number"
-                value={chapter}
-                onChange={handleChapterChange}
-                className={`${chapterError && "border-2 border-red-600"} duration-0 text-gray-800`}
-              />
+              <div className="flex space-x-2">
+                <Input
+                  type="number"
+                  value={chapter}
+                  onChange={handleChapterChange}
+                  className={`${chapterError && "border-2 border-red-600"} duration-0 text-gray-800`}
+                />
+                <Button
+                  className="bg-pink-600 text-white"
+                  onClick={setRandomChapterAndVerse}
+                >
+                  {"Randomize"}
+                </Button>
+              </div>
               <div
                 className={`${chapterError || "invisible"} min-h-5 text-xs font-medium text-red-600 -mb-5 ml-1`}
               >
@@ -278,12 +301,20 @@ const QuranPostGenerator = () => {
               <label className="block text-sm font-medium text-gray-800 mb-1">
                 Verse
               </label>
-              <Input
-                type="number"
-                value={verse}
-                onChange={handleVerseChange}
-                className={`${verseError && "border-2 border-red-600"} duration-0 text-gray-800`}
-              />
+              <div className="flex space-x-2">
+                <Input
+                  type="number"
+                  value={verse}
+                  onChange={handleVerseChange}
+                  className={`${verseError && "border-2 border-red-600"} duration-0 text-gray-800`}
+                />
+                <Button
+                  className="bg-pink-600 text-white"
+                  onClick={setRandomVerse}
+                >
+                  {"Randomize"}
+                </Button>
+              </div>
               <div
                 className={`${verseError || "invisible"} min-h-5 text-xs font-medium text-red-600 -mb-5 ml-1`}
               >
