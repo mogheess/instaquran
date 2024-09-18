@@ -305,6 +305,7 @@ const QuranPostGenerator = () => {
                   className={`${verseError && "border-2 border-red-600"} duration-0 text-gray-800`}
                 />
                 <Button
+                  disabled={!chapter}
                   className="bg-pink-600 text-white"
                   onClick={setRandomVerse}
                 >
